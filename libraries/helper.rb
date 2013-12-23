@@ -19,7 +19,8 @@
 # limitations under the License.
 #
 
-if RUBY_PLATFORM =~ /mswin|mingw32|windows/
+begin
+if RUBY_PLATFORM =~ /mswin|mingw32|windows/ rescue false
   require 'chef/win32/version'
 end
 
@@ -37,4 +38,7 @@ module Opscode::IIS
           win_version.windows_2000?
     end
   end
+end
+rescue
+  puts "Problem loading IIS helper library"
 end
