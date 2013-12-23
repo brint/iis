@@ -20,7 +20,7 @@
 #
 
 begin
-if RUBY_PLATFORM =~ /mswin|mingw32|windows/ rescue false
+if RUBY_PLATFORM =~ /mswin|mingw32|windows/
   require 'chef/win32/version'
 end
 
